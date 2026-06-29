@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>orion lab studios</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html,body{
+    width:100%;
+    height:100%;
+}
+
+body{
+
+    font-family:'Inter',sans-serif;
+
+    background:
+        radial-gradient(circle at top,#474b52 0%,#2f3237 40%,#17181b 100%);
+
+    color:white;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    overflow:hidden;
+}
+
+body::after{
+
+    content:"";
+
+    position:fixed;
+    inset:0;
+
+    background:
+        repeating-linear-gradient(
+            90deg,
+            rgba(255,255,255,.015) 0px,
+            rgba(255,255,255,.015) 1px,
+            transparent 1px,
+            transparent 6px
+        );
+
+    pointer-events:none;
+}
+
+.container{
+
+    position:relative;
+
+    display:flex;
+    flex-direction:column;
+
+    align-items:center;
+
+    text-align:center;
+
+    transform:translateY(-6vh);
+
+}
+
+.title{
+
+    opacity:0;
+
+    animation:fadeIn 2s forwards,
+              float 8s ease-in-out infinite;
+
+}
+
+.title h1{
+
+    font-size:72px;
+
+    font-weight:300;
+
+    letter-spacing:8px;
+
+    color:#f0f0f0;
+
+}
+
+.title h2{
+
+    margin-top:8px;
+
+    font-size:20px;
+
+    font-weight:300;
+
+    letter-spacing:10px;
+
+    color:#9a9a9a;
+
+}
+
+.subtitle{
+
+    margin-top:40px;
+
+    font-size:18px;
+
+    color:#b8b8b8;
+
+    opacity:0;
+
+    animation:fadeIn 2s forwards;
+
+    animation-delay:.6s;
+
+}
+
+.links{
+
+    margin-top:50px;
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:18px;
+
+    opacity:0;
+
+    animation:fadeIn 2s forwards;
+
+    animation-delay:1.2s;
+
+}
+
+.links a{
+
+    color:#d5d5d5;
+
+    text-decoration:none;
+
+    font-size:18px;
+
+    transition:.25s;
+
+}
+
+.links a:hover{
+
+    color:white;
+
+    transform:translateX(6px);
+
+}
+
+.footer{
+
+    position:fixed;
+
+    bottom:28px;
+
+    width:100%;
+
+    text-align:center;
+
+    color:#6d6d6d;
+
+    font-size:13px;
+
+    letter-spacing:6px;
+
+}
+
+@keyframes fadeIn{
+
+from{
+
+opacity:0;
+transform:translateY(15px);
+
+}
+
+to{
+
+opacity:1;
+transform:translateY(0);
+
+}
+
+}
+
+@keyframes float{
+
+0%{transform:translateY(0px);}
+50%{transform:translateY(-5px);}
+100%{transform:translateY(0px);}
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="container">
+
+<div class="title">
+
+<h1>orion</h1>
+
+<h2>lab studios</h2>
+
+</div>
+
+<div class="subtitle">
+
+Independent app & game studio.
+
+</div>
+
+<div class="links">
+
+<a href="/cloudchase">cloud chase →</a>
+
+<a href="https://www.instagram.com/orionlabstudios" target="_blank">
+
+instagram
+
+</a>
+
+</div>
+
+</div>
+
+<div class="footer">
+
+crafted with intention
+
+</div>
+
+</body>
+
+</html>
