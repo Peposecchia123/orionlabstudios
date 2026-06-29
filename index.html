@@ -6,7 +6,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>orion lab studios</title>
+<title>Cloud Chase</title>
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -23,208 +23,141 @@ box-sizing:border-box;
 html,body{
 width:100%;
 height:100%;
+overflow:hidden;
+font-family:'Inter',sans-serif;
 }
 
 body{
-
-font-family:'Inter',sans-serif;
-
-background:
-radial-gradient(circle at top,#474b52 0%,#2f3237 40%,#17181b 100%);
-
+background:linear-gradient(180deg,#7bc6ff 0%,#9bd9ff 40%,#dff5ff 100%);
 display:flex;
 justify-content:center;
 align-items:center;
-
-overflow:hidden;
-
-color:white;
-
+text-align:center;
 }
 
-body::after{
+.cloud{
+position:absolute;
+background:white;
+border-radius:100px;
+opacity:.45;
+filter:blur(2px);
+animation:drift linear infinite;
+}
 
+.cloud::before,
+.cloud::after{
 content:"";
+position:absolute;
+background:white;
+border-radius:50%;
+}
 
-position:fixed;
-inset:0;
+.cloud::before{
+width:60px;
+height:60px;
+left:18px;
+top:-28px;
+}
 
-background:
-repeating-linear-gradient(
-90deg,
-rgba(255,255,255,.015) 0px,
-rgba(255,255,255,.015) 1px,
-transparent 1px,
-transparent 6px
-);
+.cloud::after{
+width:80px;
+height:80px;
+right:20px;
+top:-42px;
+}
 
-pointer-events:none;
+.c1{
+width:180px;
+height:55px;
+top:15%;
+left:-220px;
+animation-duration:60s;
+}
 
+.c2{
+width:240px;
+height:70px;
+top:60%;
+left:-260px;
+animation-duration:90s;
+}
+
+.c3{
+width:160px;
+height:50px;
+top:35%;
+left:-180px;
+animation-duration:75s;
 }
 
 .container{
-
-display:flex;
-flex-direction:column;
-align-items:center;
-text-align:center;
-
-transform:translateY(-5vh);
-
-}
-
-.title{
-
+position:relative;
+z-index:2;
+animation:fadeUp 2s ease forwards;
 opacity:0;
-
-animation:fadeIn 2s forwards,
-float 8s ease-in-out infinite;
-
 }
 
-.title h1{
-
-font-size:72px;
+h1{
+font-size:74px;
 font-weight:300;
-letter-spacing:8px;
-color:#f0f0f0;
-
-}
-
-.title h2{
-
-margin-top:8px;
-
-font-size:20px;
-
-font-weight:300;
-
-letter-spacing:10px;
-
-color:#9a9a9a;
-
+letter-spacing:2px;
+color:white;
+text-shadow:0 4px 20px rgba(0,0,0,.18);
 }
 
 .subtitle{
-
-margin-top:42px;
-
-font-size:18px;
-
-color:#b9b9b9;
-
-opacity:0;
-
-animation:fadeIn 2s forwards;
-
-animation-delay:.6s;
-
+margin-top:18px;
+font-size:22px;
+color:rgba(255,255,255,.92);
 }
 
-.section{
-
-margin-top:42px;
-
-font-size:12px;
-
-letter-spacing:4px;
-
-text-transform:uppercase;
-
-color:#8a8a8a;
-
-opacity:.7;
-
+.small{
+margin-top:10px;
+font-size:16px;
+color:rgba(255,255,255,.72);
 }
 
 .links{
-
-margin-top:16px;
-
+margin-top:55px;
 display:flex;
-
 flex-direction:column;
-
-gap:16px;
-
-opacity:0;
-
-animation:fadeIn 2s forwards;
-
-animation-delay:1.2s;
-
+gap:18px;
 }
 
 .links a{
-
-color:#d7d7d7;
-
+color:white;
 font-size:18px;
-
-text-decoration:none;
-
+text-decoration:underline;
+text-underline-offset:5px;
 transition:.25s;
-
 }
 
 .links a:hover{
-
-color:white;
-
-transform:translateX(6px);
-
+transform:translateY(-2px);
+opacity:.8;
 }
 
-.spacer{
-
-height:34px;
-
+.divider{
+width:80px;
+height:1px;
+background:rgba(255,255,255,.35);
+margin:14px auto;
 }
 
-.footer{
-
-position:fixed;
-
-bottom:28px;
-
-left:0;
-
-right:0;
-
-text-align:center;
-
-color:#666;
-
-font-size:13px;
-
-letter-spacing:6px;
-
+@keyframes drift{
+from{transform:translateX(0);}
+to{transform:translateX(calc(100vw + 450px));}
 }
 
-@keyframes fadeIn{
-
+@keyframes fadeUp{
 from{
-
 opacity:0;
-transform:translateY(15px);
-
+transform:translateY(20px);
 }
-
 to{
-
 opacity:1;
 transform:translateY(0);
-
 }
-
-}
-
-@keyframes float{
-
-0%{transform:translateY(0);}
-50%{transform:translateY(-5px);}
-100%{transform:translateY(0);}
-
 }
 
 </style>
@@ -233,61 +166,35 @@ transform:translateY(0);
 
 <body>
 
+<div class="cloud c1"></div>
+<div class="cloud c2"></div>
+<div class="cloud c3"></div>
+
 <div class="container">
 
-<div class="title">
-
-<h1>orion</h1>
-
-<h2>lab studios</h2>
-
-</div>
+<h1>cloud chase</h1>
 
 <div class="subtitle">
-
-Independent app & game studio.
-
+An adventure above the clouds.
 </div>
 
-<div class="section">
-
-Projects
-
+<div class="small">
+Coming Soon
 </div>
 
 <div class="links">
 
-<a href="/cloudchase">
-
-cloud chase →
-
-</a>
-
-</div>
-
-<div class="spacer"></div>
-
-<div class="section">
-
-Studio
-
-</div>
-
-<div class="links">
-
-<a href="https://www.instagram.com/orionlabstudios" target="_blank">
-
+<a href="https://www.instagram.com/cloudchasegame" target="_blank">
 instagram
+</a>
 
+<div class="divider"></div>
+
+<a href="/">
+← orion lab studios
 </a>
 
 </div>
-
-</div>
-
-<div class="footer">
-
-crafted with intention
 
 </div>
 
