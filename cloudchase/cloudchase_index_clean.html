@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Cloud Chase</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html,
+body {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    font-family: 'Inter', sans-serif;
+}
+
+body {
+    background: linear-gradient(180deg, #7bc6ff 0%, #9fdcff 45%, #dff5ff 100%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+/* drifting clouds */
+
+.cloud {
+    position: absolute;
+    background: white;
+    border-radius: 100px;
+    opacity: 0.45;
+    filter: blur(2px);
+    animation: drift linear infinite;
+}
+
+.cloud::before,
+.cloud::after {
+    content: "";
+    position: absolute;
+    background: white;
+    border-radius: 50%;
+}
+
+.cloud::before {
+    width: 60px;
+    height: 60px;
+    left: 18px;
+    top: -28px;
+}
+
+.cloud::after {
+    width: 80px;
+    height: 80px;
+    right: 20px;
+    top: -42px;
+}
+
+.c1 {
+    width: 180px;
+    height: 55px;
+    top: 15%;
+    left: -220px;
+    animation-duration: 60s;
+}
+
+.c2 {
+    width: 240px;
+    height: 70px;
+    top: 60%;
+    left: -260px;
+    animation-duration: 90s;
+}
+
+.c3 {
+    width: 160px;
+    height: 50px;
+    top: 35%;
+    left: -180px;
+    animation-duration: 75s;
+}
+
+.container {
+    position: relative;
+    z-index: 2;
+    opacity: 0;
+    animation: fadeUp 1.5s forwards;
+}
+
+h1 {
+    font-size: 74px;
+    font-weight: 300;
+    letter-spacing: 2px;
+    color: white;
+    text-shadow: 0 4px 20px rgba(0, 0, 0, 0.18);
+}
+
+.subtitle {
+    margin-top: 18px;
+    font-size: 22px;
+    color: rgba(255, 255, 255, 0.92);
+}
+
+.small {
+    margin-top: 10px;
+    font-size: 16px;
+    color: rgba(255, 255, 255, 0.72);
+}
+
+.links {
+    margin-top: 60px;
+}
+
+.links a {
+    color: #ffffff;
+    font-size: 18px;
+    text-decoration: underline;
+    text-decoration-thickness: 1px;
+    text-underline-offset: 5px;
+    transition: all 0.25s ease;
+}
+
+.links a:hover {
+    color: #ffffff;
+    text-decoration-thickness: 2px;
+    opacity: 0.8;
+}
+
+.footer {
+    position: fixed;
+    bottom: 24px;
+    left: 0;
+    right: 0;
+    text-align: center;
+    font-size: 14px;
+    letter-spacing: 2px;
+    color: rgba(255, 255, 255, 0.82);
+    text-shadow: 0 2px 12px rgba(0, 0, 0, 0.25);
+    z-index: 2;
+}
+
+@keyframes drift {
+    from {
+        transform: translateX(0);
+    }
+
+    to {
+        transform: translateX(calc(100vw + 450px));
+    }
+}
+
+@keyframes fadeUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+</style>
+</head>
+
+<body>
+
+<div class="cloud c1"></div>
+<div class="cloud c2"></div>
+<div class="cloud c3"></div>
+
+<div class="container">
+
+<h1>cloud chase</h1>
+
+<div class="subtitle">An adventure above the clouds.</div>
+
+<div class="small">Coming Soon</div>
+
+<div class="links">
+<a href="https://www.instagram.com/cloudchasegame" target="_blank">instagram</a>
+</div>
+
+</div>
+
+<div class="footer">orion lab studios</div>
+
+</body>
+</html>
